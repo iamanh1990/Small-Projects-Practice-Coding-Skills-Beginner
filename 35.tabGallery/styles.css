@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.tab__container {
+  display: flex;
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.img__container {
+  flex: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.img__container:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.img__container:hover {
+  opacity: 0.6;
+}
+
+.img__container img {
+  display: block;
+  width: 100%;
+}
+
+.img__container--expanding {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  display: none;
+}
+
+.img__container--expanding.show {
+  display: block;
+}
+
+.img__container--expanding img {
+  display: block;
+  width: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  font-size: 3rem;
+  color: #f3f3f3;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0 0 0 3px;
+  transition: all 0.3s ease-out;
+}
+
+.close:hover {
+  color: #333;
+  background: #f3f3f3;
+}
+
+.caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #f3f3f3;
+  font-size: 1.8rem;
+}

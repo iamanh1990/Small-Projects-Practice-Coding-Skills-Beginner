@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tabs</title>
+  </head>
+  <body>
+    <!-- Tab links -->
+    <div class="tab">
+      <button id="tabLink-london" class="tablinks">London</button>
+      <button id="tabLink-paris" class="tablinks">Paris</button>
+      <button id="tabLink-tokyo" class="tablinks">Tokyo</button>
+    </div>
+    <!-- Tab content -->
+    <div id="london" class="tabcontent">
+      <h3>London</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima,
+        dolorem.
+      </p>
+    </div>
+    <div id="paris" class="tabcontent">
+      <h3>Paris</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima,
+        dolorem. dolorem. dolorem.
+      </p>
+    </div>
+    <div id="tokyo" class="tabcontent">
+      <h3>Tokyo</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima,
+        dolorem. dolorem.
+      </p>
+    </div>
+  </body>
+  <script>
+    const openCity = (event, cityName) => {
+      let i, tabcontent, tablinks;
+      //Hide all tabs content
+      tabcontent = document.querySelectorAll(".tabcontent");
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      //remove the active tablinks
+      tablinks = document.querySelectorAll("tablinks");
+      for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks.className.replace("active", "");
+      }
+      //Show the current tab content and add active class to that tab
+      document.getElementById(cityName).style.display = "block";
+      event.currentTarget.className += "active";
+    };
+    //Add functionality
+    document
+      .getElementById("tabLink-london")
+      .addEventListener("click", (event) => openCity(event, "london"));
+    document
+      .getElementById("tabLink-paris")
+      .addEventListener("click", (event) => openCity(event, "paris"));
+    document
+      .getElementById("tabLink-tokyo")
+      .addEventListener("click", (event) => openCity(event, "tokyo"));
+
+    //Open by default
+    document.getElementById("tabLink-london").click();
+  </script>
+</html>

@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+#myBtn {
+  font-size: 1.8rem;
+  color: #f3f3f3;
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 1rem 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background: #6e6e6e;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+#myBtn:active {
+  outline: none;
+  background: #333;
+  transform: scale(0.95);
+}
+
+#myBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px 3px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: auto;
+  display: none;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-body {
+  width: 80%;
+  margin: 10% auto 0 auto;
+  background: #f3f3f3;
+  border-radius: 3px;
+  box-shadow: 0 5px 15px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 1.8rem;
+  color: #f3f3f3;
+  animation: fadeFromTop 0.3s ease-out;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 2rem;
+  background: orangered;
+}
+
+.modal-content {
+  padding: 2rem;
+  color: #6e6e6e;
+}
+
+.modal-content p:first-child {
+  margin-bottom: 1rem;
+}
+
+.modal-header {
+  border-radius: 3px 3px 0 0;
+}
+
+.modal-footer {
+  border-radius: 0 0 3px 3px;
+}
+
+.close {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #f3f3f3;
+  font-size: 2rem;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.close:hover {
+  transform: translateY(-2px) scale(1.5);
+}
+
+@keyframes fadeFromTop {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

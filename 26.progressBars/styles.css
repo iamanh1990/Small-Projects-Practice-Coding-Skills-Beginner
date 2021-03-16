@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 3rem;
+}
+
+.progress-bar {
+  padding: 1rem 0.5rem;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  position: relative;
+}
+
+.progress-bar:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.progress-bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 10;
+}
+
+.progress-bar:nth-child(1)::before {
+  width: 80%;
+  background-color: orangered;
+}
+
+.progress-bar:nth-child(2)::before {
+  width: 40%;
+  background-color: green;
+}
+
+.progress-bar:nth-child(3)::before {
+  width: 60%;
+  background-color: blue;
+}
+
+.progress-bar--outter {
+  padding: 1rem 0.5rem;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  position: relative;
+}
+
+.progress-bar--inner {
+  width: 2%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: green;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 10;
+}
+
+.upload-btn {
+  padding: 1rem 0.5rem;
+  background-color: #f1f1f1;
+  width: 10%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: grey;
+}

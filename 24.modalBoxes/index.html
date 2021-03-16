@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Modal Boxes</title>
+  </head>
+  <body>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-body">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+          <h2>Modal Header</h2>
+        </div>
+        <div class="modal-content">
+          <p>Hello World!</p>
+          <p>Modals are awesome!</p>
+        </div>
+        <div class="modal-footer">Modal footer</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const openButton = document.getElementById("myBtn");
+    const modal = document.getElementById("myModal");
+    const closeBtn = document.querySelector(".close");
+    openButton.addEventListener("click", () => {
+      modal.classList.add("show");
+    });
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+    window.addEventListener("click", (e) => {
+      e.target.classList.remove("show");
+    });
+  </script>
+</html>

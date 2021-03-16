@@ -1,0 +1,134 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Universal Styling */
+*,
+*::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --gutter-vertical: 0.5rem;
+  --gutter-horizontal: 0.5rem;
+  --main-background: #f3f3f3;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: 1.8rem;
+  padding: var(--gutter-horizontal);
+  min-height: 100vh;
+  display: grid;
+  grid: 10vh auto 10vh / repeat(8, 1fr);
+  grid-template-areas:
+    "h h h h h h h h"
+    "c c c c c c s s"
+    "f f f f f f f f";
+  grid-column-gap: var(--gutter-vertical);
+  grid-row-gap: var(--gutter-horizontal);
+}
+
+.header {
+  grid-area: h;
+  display: flex;
+}
+
+.heading--main {
+  flex: 1;
+  background-color: yellow;
+  margin-right: var(--gutter-vertical);
+}
+
+.navbar {
+  flex: 1;
+}
+
+.navbar__nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.navbar__item {
+  list-style: none;
+  display: block;
+  flex: 1;
+  background-color: violet;
+  height: 100%;
+}
+
+.navbar__item:not(:last-child) {
+  margin-right: var(--gutter-vertical);
+}
+
+.navbar__link {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.content {
+  grid-area: c;
+  display: grid;
+  grid-gap: var(--gutter-horizontal);
+  grid: 10vh 1fr 1fr / repeat(8, 1fr);
+  grid-template-areas:
+    "t t t t t t t t"
+    "m c c c c c c c"
+    "m i i i i i i i";
+}
+
+.post__title {
+  grid-area: t;
+  background-color: turquoise;
+}
+
+.post__meta {
+  grid-area: m;
+  background-color: yellowgreen;
+}
+
+.main__content {
+  grid-area: c;
+  background-color: grey;
+}
+
+.main__content__img {
+  grid-area: i;
+  background-color: yellow;
+}
+
+.sidebar {
+  grid-area: s;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar div {
+  flex: 1;
+}
+
+.sidebar__content {
+  background-color: orange;
+}
+
+.ads {
+  background-color: green;
+  margin: var(--gutter-horizontal) 0;
+}
+
+.other-stuff {
+  background-color: pink;
+}
+
+.footer {
+  grid-area: f;
+  background-color: red;
+}

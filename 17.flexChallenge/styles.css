@@ -1,0 +1,157 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Universal Styling */
+*,
+*::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --gutter-vertical: 0.5rem;
+  --gutter-horizontal: 0.5rem;
+  --main-background: #f3f3f3;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--gutter-horizontal) var(--gutter-vertical);
+  background-color: var(--main-background);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+}
+
+/* Header */
+.header {
+  flex: 0 0 10vh;
+  display: flex;
+  background-color: var(--main-background);
+  margin-bottom: var(--gutter-vertical);
+}
+
+.heading-main {
+  width: 50%;
+  font-size: 2rem;
+  background-color: yellow;
+  margin-right: var(--gutter-vertical);
+}
+
+/* Navbar */
+.navbar {
+  width: 50%;
+  height: inherit;
+}
+
+.navbar__nav {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar__item {
+  flex: 1;
+  display: block;
+  list-style: none;
+  background-color: pink;
+}
+
+.navbar__item:not(:last-child) {
+  margin-right: var(--gutter-vertical);
+}
+
+.navbar__link {
+  display: block;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+}
+
+/* Content */
+.content-container {
+  flex: 1 0 auto;
+  margin-bottom: var(--gutter-vertical);
+  display: flex;
+}
+
+.content-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: var(--gutter-vertical);
+}
+
+.content-right {
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Side Content */
+.post-title-container {
+  flex: 0 0 15%;
+  background-color: turquoise;
+  margin-bottom: var(--gutter-horizontal);
+}
+
+.post-meta-container {
+  flex: 0 0 20%;
+  background-color: yellowgreen;
+  margin-right: var(--gutter-vertical);
+}
+
+.post-content-container {
+  flex: 1;
+  display: flex;
+}
+
+.post-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 0 0 40%;
+  background-color: gray;
+  margin-bottom: var(--gutter-horizontal);
+}
+
+.main-content-image {
+  flex: 1;
+  background-color: yellow;
+}
+
+/* Right Side Content */
+.sidebar-container {
+  flex: 1;
+  background-color: orange;
+  margin-bottom: var(--gutter-horizontal);
+}
+
+.ads-container {
+  flex: 1;
+  background-color: green;
+  margin-bottom: var(--gutter-horizontal);
+}
+
+.other-stuff-container {
+  flex: 1;
+  background-color: hotpink;
+}
+
+/* Footer */
+.footer {
+  background-color: red;
+  flex: 0 0 10vh;
+}

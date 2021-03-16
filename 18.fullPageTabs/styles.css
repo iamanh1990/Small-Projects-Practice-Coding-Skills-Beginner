@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* style the button - tablink */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink.active {
+  background-color: red;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* style the tabcontent */
+.tabcontent {
+  height: 100vh;
+  padding: 100px 20px;
+  color: white;
+  display: none;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+#Home {
+  background-color: red;
+}
+#News {
+  background-color: green;
+}
+#Contact {
+  background-color: blue;
+}
+#About {
+  background-color: orange;
+}

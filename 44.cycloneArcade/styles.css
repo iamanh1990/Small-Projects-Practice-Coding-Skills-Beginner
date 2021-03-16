@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  padding: 30px;
+}
+
+.btn {
+  font-family: inherit;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: aliceblue;
+  outline: none;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:first-child {
+  margin-right: 10px;
+}
+
+.btn:active {
+  outline: none;
+  transform: scale(0.9);
+}
+
+#result {
+  width: 70%;
+  margin: 10px auto;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.bulbs {
+  margin: 200px auto;
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.bulb {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 10px;
+  position: absolute;
+  -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+  transition: all 2s linear;
+  -webkit-transition: background-color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out;
+  -o-transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+  cursor: pointer;
+}
+
+.bulb.active {
+  background-color: yellow !important;
+}
+
+.bulb.chose {
+  background-color: red;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tab Gallery</title>
+  </head>
+  <body>
+    <div class="tab__container">
+      <div class="img__container">
+        <img src="./img/orange1.jfif" alt="Orange 1" />
+      </div>
+      <div class="img__container">
+        <img src="./img/orange2.jfif" alt="Orange 2" />
+      </div>
+      <div class="img__container">
+        <img src="./img/orange3.jfif" alt="Orange 3" />
+      </div>
+      <div class="img__container">
+        <img src="./img/orange4.jfif" alt="Orange 4" />
+      </div>
+    </div>
+    <div class="img__container--expanding">
+      <div class="close">&times;</div>
+      <img src="./img/orange1.jfif" alt="Orange 1" />
+      <div class="caption"></div>
+    </div>
+    <div class="img__container--expanding">
+      <div class="close">&times;</div>
+      <img src="./img/orange2.jfif" alt="Orange 2" />
+      <div class="caption"></div>
+    </div>
+    <div class="img__container--expanding">
+      <div class="close">&times;</div>
+      <img src="./img/orange3.jfif" alt="Orange 3" />
+      <div class="caption"></div>
+    </div>
+    <div class="img__container--expanding">
+      <div class="close">&times;</div>
+      <img src="./img/orange4.jfif" alt="Orange 4" />
+      <div class="caption"></div>
+    </div>
+  </body>
+  <script>
+    const tabs = document.querySelectorAll(".img__container");
+    const images = document.querySelectorAll(".img__container--expanding");
+    closeButtons = document.querySelectorAll(".close");
+    //open expanding images
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        //close all expanding images
+        images.forEach((img) => {
+          img.classList.remove("show");
+        });
+        //open specific expanding image
+        images[index].classList.add("show");
+        //get caption for specific image
+        const img = images[index].children[1];
+        const caption = images[index].children[2];
+        caption.textContent = img.getAttribute("alt");
+      });
+    });
+    //close expanding images
+    closeButtons.forEach((closeButton) => {
+      closeButton.addEventListener("click", () => {
+        const imgContainer = closeButton.parentElement;
+        imgContainer.classList.remove("show");
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 70%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.slide__box {
+  position: relative;
+  display: none;
+  animation: fade 2s ease-out;
+}
+
+.slide__box.show {
+  display: block;
+}
+
+.number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #f3f3f3;
+  font-size: 1.6rem;
+}
+
+.slide__img {
+  display: block;
+  width: 100%;
+}
+
+.img__text {
+  width: 100%;
+  background-color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #f3f3f3;
+}
+
+.controller {
+  position: absolute;
+  top: 35%;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all ease-out 0.3s;
+}
+
+.controller:hover {
+  background-color: #333;
+}
+
+.controller.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.controller.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.thumbnail__images__box {
+  display: flex;
+}
+
+.thumbnail__image__box {
+  flex: 1;
+  cursor: pointer;
+}
+
+.thumbnail__image__box:hover,
+.thumbnail__image__box.active {
+  opacity: 0.5;
+}
+
+.thumbnail__img {
+  display: block;
+  width: 100%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

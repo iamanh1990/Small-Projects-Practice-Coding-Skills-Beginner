@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Full Page Tab</title>
+  </head>
+  <body>
+    <button class="tablink active">Home</button>
+    <button class="tablink">News</button>
+    <button class="tablink">Contact</button>
+    <button class="tablink">About</button>
+
+    <div id="Home" class="tabcontent active">
+      <h3>Home</h3>
+      <p>Home is where the heart is..</p>
+    </div>
+
+    <div id="News" class="tabcontent">
+      <h3>News</h3>
+      <p>Some news this fine day!</p>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+      <h3>Contact</h3>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>Who we are and what we do.</p>
+    </div>
+  </body>
+  <script>
+    const tabLinks = document.querySelectorAll(".tablink");
+    const tabContents = document.querySelectorAll(".tabcontent");
+    const openLink = (event, element) => {
+      //clear active class and backgroundColor of tablinks
+      tabLinks.forEach((tabLink) => {
+        tabLink.classList.remove("active");
+        tabLink.style.backgroundColor = "";
+      });
+      //remove active to all tabcontents
+      tabContents.forEach((tabContent) => {
+        tabContent.classList.remove("active");
+      });
+      //add class active to specific tab content
+      const tabContentId = event.target.textContent;
+      const tabContent = document.getElementById(tabContentId);
+      tabContent.classList.add("active");
+      //set the tablink with the same color as open tabcontent
+      const tabContentColor = window.getComputedStyle(tabContent)
+        .backgroundColor;
+      element.style.backgroundColor = tabContentColor;
+    };
+
+    tabLinks.forEach((tabLink) => {
+      tabLink.addEventListener("click", function (event) {
+        openLink(event, this);
+      });
+    });
+  </script>
+</html>

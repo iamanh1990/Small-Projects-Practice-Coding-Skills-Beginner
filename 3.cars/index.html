@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Cars Maker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Car Collection</h1>
+      <form class="form" id="form-make-car">
+        <div class="form__group">
+          <input
+            type="text"
+            id="licence-plate"
+            class="form__input"
+            placeholder="Car licence plate"
+            required
+          />
+          <label for="licence-plate" class="form__label"
+            >Your Car Licence Plate</label
+          >
+        </div>
+        <div class="form__group">
+          <input
+            type="text"
+            id="car-model"
+            class="form__input"
+            placeholder="car model"
+            required
+          />
+          <label for="car-model" class="form__label">Your Car Model</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="text"
+            id="car-maker"
+            class="form__input"
+            placeholder="car maker"
+            required
+          />
+          <label for="car-maker" class="form__label">Your Car Maker</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="number"
+            id="price"
+            class="form__input"
+            placeholder="Car Price"
+            required
+          />
+          <label for="price" class="form__label">Your Car Price</label>
+        </div>
+        <div class="form__group">
+          <input
+            type="text"
+            name="color"
+            id="color"
+            class="form__input"
+            placeholder="car color"
+            required
+          />
+          <label for="color" class="form__label">Your Car Color</label>
+        </div>
+        <button type="submit" class="submit-btn">Create Your Car</button>
+      </form>
+      <div class="result" id="make-car-result">This is the car you created</div>
+    </div>
+    <div class="container">
+      <h1>Search Your Car</h1>
+      <form class="form" id="form-search-car">
+        <div class="form__group">
+          <input
+            type="text"
+            class="form__input"
+            id="search-input"
+            placeholder="Search For Your Car By License Plate"
+            required
+          />
+        </div>
+        <button type="submit" class="submit-btn">Search</button>
+      </form>
+      <div class="result" id="search-car-result">
+        This is the car you created
+      </div>
+    </div>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>

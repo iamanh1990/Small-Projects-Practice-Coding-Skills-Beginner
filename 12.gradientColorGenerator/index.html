@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Gradient Generator</title>
+  </head>
+  <body>
+    <h1 class="heading-main">Generate custom gradient background is easy:</h1>
+    <form class="form">
+      <!-- Direction -->
+      <div class="direction-container">
+        <h3 class="heading-sub">At first choose the direction</h3>
+        <div class="form-group">
+          <input
+            type="radio"
+            id="leftRight"
+            class="form-input"
+            name="direction"
+            value="to right"
+            checked
+          />
+          <label for="leftRight">Left to Right</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="radio"
+            id="rightLeft"
+            class="form-input"
+            name="direction"
+            value="to left"
+          />
+          <label for="rightLeft">Right to Left</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="radio"
+            id="topBottom"
+            class="form-input"
+            name="direction"
+            value="to bottom"
+          />
+          <label for="topBottom">Top to Bottom</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="radio"
+            id="bottomRight"
+            class="form-input"
+            name="direction"
+            value="to bottom right"
+          />
+          <label for="bottomRight">Bottom to Right</label>
+        </div>
+      </div>
+      <!-- Colors -->
+      <div class="colors-container">
+        <h3 class="heading-sub">Second, choose colors</h3>
+        <div class="form-group">
+          <input
+            type="color"
+            name="color1"
+            id="color1"
+            class="form-input"
+            value="#e485c7"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="color"
+            name="color2"
+            id="color2"
+            class="form-input"
+            value="#5c0b4e"
+          />
+        </div>
+      </div>
+      <!-- Generate -->
+      <div class="generate-container">
+        <h3 class="heading-sub">Third, generate your gradient</h3>
+        <input type="submit" value="Generate" id="generateBtn" />
+      </div>
+    </form>
+
+    <!-- Copy CSS Code -->
+    <div class="copy-css-container">
+      <h3 class="heading-sub">Finally copy your CSS code</h3>
+      <p class="css-code">Your Code Will Be Here</p>
+    </div>
+  </body>
+  <!-- JavaScript -->
+  <script src="./scripts.js"></script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Slideshow Gallery</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- main slides -->
+      <div class="slide__box">
+        <div class="number">1 / 6</div>
+        <img src="./img/orange1.jfif" alt="Orange 1" class="slide__img" />
+      </div>
+      <div class="slide__box">
+        <div class="number">2 / 6</div>
+        <img src="./img/orange2.jfif" alt="Orange 2" class="slide__img" />
+      </div>
+      <div class="slide__box">
+        <div class="number">3 / 6</div>
+        <img src="./img/orange3.jfif" alt="Orange 3" class="slide__img" />
+      </div>
+      <div class="slide__box">
+        <div class="number">4 / 6</div>
+        <img src="./img/orange4.jfif" alt="Orange 4" class="slide__img" />
+      </div>
+      <div class="slide__box">
+        <div class="number">5 / 6</div>
+        <img src="./img/orange5.jfif" alt="Orange 5" class="slide__img" />
+      </div>
+      <div class="slide__box">
+        <div class="number">6 / 6</div>
+        <img src="./img/orange6.jfif" alt="Orange 6" class="slide__img" />
+      </div>
+      <!-- Caption -->
+      <div class="img__text" id="img__text"></div>
+      <!-- Control -->
+      <div class="controller prev">&#10094;</div>
+      <div class="controller next">&#10095;</div>
+      <!-- Thumbnails -->
+      <div class="thumbnail__images__box">
+        <div class="thumbnail__image__box">
+          <img src="./img/orange1.jfif" alt="Orange1" class="thumbnail__img" />
+        </div>
+        <div class="thumbnail__image__box">
+          <img src="./img/orange2.jfif" alt="Orange2" class="thumbnail__img" />
+        </div>
+        <div class="thumbnail__image__box">
+          <img src="./img/orange3.jfif" alt="Orange3" class="thumbnail__img" />
+        </div>
+        <div class="thumbnail__image__box">
+          <img src="./img/orange4.jfif" alt="Orange4" class="thumbnail__img" />
+        </div>
+        <div class="thumbnail__image__box">
+          <img src="./img/orange5.jfif" alt="Orange5" class="thumbnail__img" />
+        </div>
+        <div class="thumbnail__image__box">
+          <img src="./img/orange6.jfif" alt="Orange6" class="thumbnail__img" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const slides = document.querySelectorAll(".slide__box");
+    const thumbnailImages = document.querySelectorAll(".thumbnail__image__box");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    const imageText = document.getElementById("img__text");
+    let slideIndex = 1;
+    const openSlide = (slideIndex) => {
+      //close all slides and thumbnails by default
+      slides.forEach((slide) => {
+        slide.classList.remove("show");
+      });
+      thumbnailImages.forEach((thumbnailImage) => {
+        thumbnailImage.classList.remove("active");
+      });
+
+      //checking the slideIndex
+      if (slideIndex > slides.length) slideIndex = 1;
+      if (slideIndex < 1) slideIndex = slides.length;
+
+      // Open the specific slide and thumbnail image according to slideIndex
+      slides[slideIndex - 1].classList.add("show");
+      thumbnailImages[slideIndex - 1].classList.add("active");
+
+      //update the image text
+      thumbnailImages.forEach((thumbnailImage) => {
+        if (thumbnailImage.classList.contains("active")) {
+          const text = thumbnailImage.firstElementChild.getAttribute("alt");
+          imageText.textContent = text;
+        }
+      });
+
+      return slideIndex;
+    };
+    //intialize the slides
+    slideIndex = openSlide(slideIndex);
+    //add event to prev, next button
+    prev.addEventListener("click", () => {
+      slideIndex--;
+      slideIndex = openSlide(slideIndex);
+    });
+    next.addEventListener("click", () => {
+      slideIndex++;
+      slideIndex = openSlide(slideIndex);
+    });
+    //Add event listener for thumbnail images
+    thumbnailImages.forEach((thumbnailImage, index) => {
+      thumbnailImage.addEventListener("click", () => {
+        slideIndex = openSlide(index + 1);
+      });
+    });
+  </script>
+</html>

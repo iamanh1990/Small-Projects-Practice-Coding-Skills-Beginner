@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tab Headers</title>
+  </head>
+  <body>
+    <div id="London" class="tabcontent">
+      <h1>London</h1>
+      <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+      <h1>Paris</h1>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <h1>Tokyo</h1>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+      <h1>Oslo</h1>
+      <p>Oslo is the capital of Norway.</p>
+    </div>
+
+    <button class="tablink" id="defaultOpen">London</button>
+    <button class="tablink">Paris</button>
+    <button class="tablink">Tokyo</button>
+    <button class="tablink">Oslo</button>
+  </body>
+  <script>
+    const openCity = (city, element, color) => {
+      //close all tabcontents
+      const tabContentEls = document.querySelectorAll(".tabcontent");
+      tabContentEls.forEach((tabContentEl) => {
+        tabContentEl.style.display = "none";
+      });
+      //remove background color of all tablink
+      const tablinkEls = document.querySelectorAll(".tablink");
+      tablinkEls.forEach((tablinkEl) => {
+        tablinkEl.style.backgroundColor = "";
+      });
+      //show the specific tab
+      const tab = document.getElementById(city);
+      tab.style.display = "block";
+      //add specific color to the tablink
+      element.style.backgroundColor = color;
+    };
+    //Add event
+    const tabLondon = document.querySelectorAll(".tablink")[0];
+    tabLondon.addEventListener("click", function () {
+      openCity("London", this, "red");
+    });
+    const tabParis = document.querySelectorAll(".tablink")[1];
+    tabParis.addEventListener("click", function () {
+      openCity("Paris", this, "green");
+    });
+    const tabTokyo = document.querySelectorAll(".tablink")[2];
+    tabTokyo.addEventListener("click", function () {
+      openCity("Tokyo", this, "blue");
+    });
+    const tabOslo = document.querySelectorAll(".tablink")[3];
+    tabOslo.addEventListener("click", function () {
+      openCity("Oslo", this, "orange");
+    });
+    //always open the default tabcontent
+    document.getElementById("defaultOpen").click();
+  </script>
+</html>

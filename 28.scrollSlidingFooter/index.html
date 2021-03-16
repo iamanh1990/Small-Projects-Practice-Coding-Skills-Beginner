@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Scroll Sliding Footer</title>
+  </head>
+  <body>
+    <div class="container">
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="#" class="footer__link">Services</a>
+          <a href="#" class="footer__link">Our Work</a>
+          <a href="#" class="footer__link">Talent Pool</a>
+          <a href="#" class="footer__link">About</a>
+          <a href="#" class="footer__link">Academy</a>
+        </div>
+        <div class="footer__links">
+          <h3 class="heading--sub">Blog</h3>
+          <a href="#" class="footer__link">Integrify Alumni Story</a>
+          <a href="#" class="footer__link">People Behind Integrify</a>
+          <a href="#" class="footer__link">Becoming A Developer</a>
+        </div>
+        <div class="footer__links">
+          <h3 class="heading--sub">Careers</h3>
+          <a href="#" class="footer__link">Business Developer</a>
+        </div>
+        <div class="social-icons-container">
+          <div class="social-icon">
+            <i class="fab fa-facebook fa-2x"></i>
+          </div>
+          <div class="social-icon">
+            <i class="fab fa-instagram fa-2x"></i>
+          </div>
+          <div class="social-icon">
+            <i class="fab fa-twitter fa-2x"></i>
+          </div>
+          <div class="social-icon">
+            <i class="fab fa-github fa-2x"></i>
+          </div>
+        </div>
+        <div class="copy-right">Integrify 2021</div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("scroll", () => {
+      const footer = document.querySelector(".footer");
+      const bodyHeight = document.body.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrolledTop = window.pageYOffset;
+
+      if (bodyHeight - scrolledTop === windowHeight) {
+        console.log(windowHeight);
+        footer.classList.add("active");
+      } else {
+        footer.classList.remove("active");
+      }
+    });
+  </script>
+</html>

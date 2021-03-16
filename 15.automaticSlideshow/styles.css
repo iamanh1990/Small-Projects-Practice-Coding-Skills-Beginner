@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.container {
+  margin: 3rem auto 0 auto;
+  max-width: 70%;
+  position: relative;
+}
+
+.slideshow__box {
+  position: relative;
+  display: none;
+  animation: fade 4s;
+}
+
+.slideshow__box.show {
+  display: block;
+}
+
+.slideshow__img {
+  width: 100%;
+}
+
+.img__number {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+}
+
+.slideshow__img__caption {
+  position: absolute;
+  bottom: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.dots {
+  width: 10%;
+  margin: -3rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dots div {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #b6b5b5;
+  z-index: 20;
+  cursor: pointer;
+  animation: fade 0.5s;
+}
+
+.dots div.active {
+  background: #e7e6e6;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

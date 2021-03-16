@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Automatic Slideshow</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="slideshow__box">
+        <span class="img__number">1/4</span>
+        <img src="./img/orange1.jfif" alt="" class="slideshow__img" />
+        <div class="slideshow__img__caption">Text Caption 1</div>
+      </div>
+
+      <div class="slideshow__box">
+        <span class="img__number">2/4</span>
+        <img src="./img/orange2.jfif" alt="" class="slideshow__img" />
+        <div class="slideshow__img__caption">Text Caption 2</div>
+      </div>
+
+      <div class="slideshow__box">
+        <span class="img__number">3/4</span>
+        <img src="./img/orange3.jfif" alt="" class="slideshow__img" />
+        <div class="slideshow__img__caption">Text Caption 3</div>
+      </div>
+
+      <div class="slideshow__box">
+        <span class="img__number">4/4</span>
+        <img src="./img/orange4.jfif" alt="" class="slideshow__img" />
+        <div class="slideshow__img__caption">Text Caption 4</div>
+      </div>
+      <div class="dots">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const slides = document.querySelectorAll(".slideshow__box");
+    const dots = document.querySelectorAll(".dots div");
+    let slideIndex = 1;
+    const openSlide = () => {
+      //close images by default
+      slides.forEach((slide) => slide.classList.remove("show"));
+      //inactive dots by default
+      dots.forEach((dot) => dot.classList.remove("active"));
+      //check slideIndex
+      if (slideIndex > slides.length) slideIndex = 1;
+      //show the specific image and dot
+      slides[slideIndex - 1].classList.add("show");
+      dots[slideIndex - 1].classList.add("active");
+      //increment slideIndex
+      slideIndex++;
+
+      //call the function after 3s
+      setTimeout(() => {
+        openSlide();
+      }, 5000);
+    };
+    openSlide();
+  </script>
+</html>

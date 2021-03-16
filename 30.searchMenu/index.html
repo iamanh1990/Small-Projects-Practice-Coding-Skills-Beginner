@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Search Menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">This is header</header>
+      <aside class="sidebar">
+        <h2>Menu</h2>
+        <input
+          type="text"
+          id="mySearch"
+          placeholder="Search.."
+          title="Type in a category"
+        />
+
+        <ul id="myMenu">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">PHP</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">jQuery</a></li>
+          <li><a href="#">SQL</a></li>
+          <li><a href="#">Bootstrap</a></li>
+          <li><a href="#">Node.js</a></li>
+        </ul>
+      </aside>
+      <main class="content">
+        <h2>Page Content</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit id
+          voluptatem cumque maiores est iste magnam suscipit, alias laborum vel
+          voluptate perferendis consequuntur, reprehenderit, itaque quisquam
+          sequi non veritatis accusantium. Quis, aperiam dolore consectetur
+          corrupti accusantium sed a voluptatum eveniet! Aliquid a aliquam quos
+          nostrum deleniti quae expedita velit cupiditate error, mollitia m
+          corporis officiis nobis aliquam provident atque, autem optio fuga?
+          Odit blanditiis, rerum perspiciatis ratione aspernatur est nemo earum
+          velit repudiandae, alias facilis voluptates, a minus tenetur obcaecati
+          harum assumenda dolorem aperiam accusamus nam. Molestiae laudantium
+          beatae dolorem minus quibusdam.
+        </p>
+      </main>
+      <footer class="footer">This is footer</footer>
+    </div>
+    <script>
+      const mySearch = document.getElementById("mySearch");
+      const onInput = (event) => {
+        const input = event.target.value.toLowerCase();
+        const listItems = document.querySelectorAll("#myMenu > li");
+        listItems.forEach((listItem) => {
+          const listContent = listItem.textContent.toLowerCase();
+          if (!listContent.includes(input)) {
+            listItem.classList.add("hide");
+          } else {
+            listItem.classList.remove("hide");
+          }
+        });
+      };
+      mySearch.addEventListener("input", onInput);
+    </script>
+  </body>
+</html>

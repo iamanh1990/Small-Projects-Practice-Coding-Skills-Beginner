@@ -1,0 +1,38 @@
+/* Universal styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #fff;
+  padding: 3rem;
+  background: orangered;
+
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: 100%;
+}
+
+/* End of Universal styles */

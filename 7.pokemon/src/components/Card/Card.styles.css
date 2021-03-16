@@ -1,0 +1,41 @@
+.card {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  padding: 3rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .card_img {
+  display: block;
+  width: 100px;
+  margin-bottom: auto;
+}
+
+.card h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.card:hover {
+  animation: box-moving 0.3s ease-out;
+}
+
+@keyframes box-moving {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

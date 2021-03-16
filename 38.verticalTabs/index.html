@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Vertical Tabs</title>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks active">London</button>
+      <button class="tablinks">Paris</button>
+      <button class="tablinks">Tokyo</button>
+    </div>
+
+    <div class="tabcontent-container">
+      <div id="London" class="tabcontent active">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+      </div>
+
+      <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+
+      <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const openCity = (event) => {
+      //remove active class of all tablinks
+      const tabLinks = document.querySelectorAll(".tablinks");
+      tabLinks.forEach((tabLink) => {
+        tabLink.classList.remove("active");
+      });
+      //add active class to specific tablink
+      event.target.classList.add("active");
+      //remove active class to all tabcontent
+      const tabContents = document.querySelectorAll(".tabcontent");
+      tabContents.forEach((tabContent) => {
+        tabContent.classList.remove("active");
+      });
+      //add active class to specific tabcontent
+      const tabcontentId = event.target.textContent;
+      const tabContent = document.getElementById(tabcontentId);
+      tabContent.classList.add("active");
+    };
+
+    //add event
+    const tabLinks = document.querySelectorAll(".tablinks");
+    tabLinks.forEach((tabLink) => {
+      tabLink.addEventListener("click", openCity);
+    });
+  </script>
+</html>

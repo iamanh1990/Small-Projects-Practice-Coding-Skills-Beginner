@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Progress Bars</title>
+  </head>
+  <body>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+    <div class="progress-bar"></div>
+
+    <div class="load-photo__container">
+      <h2>Dynamic Progress Bar with JavaScript</h2>
+      <p>Uploading Photos With Progress Bar</p>
+      <div class="progress-bar--outter">
+        <div class="progress-bar--inner"></div>
+      </div>
+      <p id="myP">Added <span id="photo-count">0</span> of 10 photos</p>
+      <button class="upload-btn">Upload Photos</button>
+    </div>
+  </body>
+  <script>
+    function move() {
+      console.log(this);
+      const frame = () => {
+        if (width >= 100) {
+          clearInterval(id);
+          myP.innerHTML = "Succesfully uploaded 10 photos";
+          innerBar.style.borderTopRightRadius = "20px";
+          innerBar.style.borderBottomRightRadius = "20px";
+          document.querySelector(".upload-btn").disabled = true;
+          document.querySelector(".upload-btn").textContent = "Upload Photos";
+        } else {
+          width++;
+          innerBar.style.width = `${width}%`;
+          let imageCount = (width * 1) / 10;
+          imageCount = imageCount.toFixed(0);
+          document.getElementById("photo-count").innerHTML = imageCount;
+          document.querySelector(".upload-btn").textContent = "Cancel";
+        }
+      };
+
+      const innerBar = document.querySelector(".progress-bar--inner");
+      const myP = document.getElementById("myP");
+
+      let width = 0;
+      let id = setInterval(frame, 50);
+    }
+
+    document
+      .querySelector(".upload-btn")
+      .addEventListener("click", function () {
+        move();
+      });
+  </script>
+</html>

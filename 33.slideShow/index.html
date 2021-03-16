@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>slide show</title>
+  </head>
+  <body>
+    <div class="slideshow__container">
+      <div class="controller left">&#10094;</div>
+      <div class="controller right">&#10095;</div>
+      <div class="img__container">
+        <div class="numbers">1/4</div>
+        <img
+          src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="slideshow__img"
+        />
+        <div class="caption">Caption Text 1</div>
+      </div>
+
+      <div class="img__container">
+        <div class="numbers">2/4</div>
+        <img
+          src="https://images.unsplash.com/photo-1508556497405-ed7dcd94acfc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="slideshow__img"
+        />
+        <div class="caption">Caption Text 2</div>
+      </div>
+
+      <div class="img__container">
+        <div class="numbers">3/4</div>
+        <img
+          src="https://images.unsplash.com/photo-1536257104079-aa99c6460a5a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bGFuZHNjYXBlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="slideshow__img"
+        />
+        <div class="caption">Caption Text 3</div>
+      </div>
+
+      <div class="img__container">
+        <div class="numbers">4/4</div>
+        <img
+          src="https://images.unsplash.com/photo-1515961896317-adf9e14bdcc0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt=""
+          class="slideshow__img"
+        />
+        <div class="caption">Caption Text 4</div>
+      </div>
+
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </body>
+  <script>
+    const controllerRight = document.querySelector(".right");
+    const controllerLeft = document.querySelector(".left");
+    const images = document.querySelectorAll(".img__container");
+    const dots = document.querySelectorAll(".dots span");
+    const firstDot = document.querySelector(".dots span:nth-child(1)");
+    const secondDot = document.querySelector(".dots span:nth-child(2)");
+    const thirdDot = document.querySelector(".dots span:nth-child(3)");
+    const fourthDot = document.querySelector(".dots span:nth-child(4)");
+    //slideshow function
+    const openSlide = (slideIndex) => {
+      //close all images and dot
+      images.forEach((image) => {
+        image.classList.remove("show");
+      });
+
+      dots.forEach((dot) => {
+        dot.classList.remove("active");
+      });
+
+      //check the slideIndex
+      if (slideIndex < 1) slideIndex = images.length;
+      if (slideIndex > images.length) slideIndex = 1;
+      //open the respective image and dot according to the slideIndex
+      images[slideIndex - 1].classList.add("show");
+      dots[slideIndex - 1].classList.add("active");
+      //update the slideIndex
+      return slideIndex;
+    };
+
+    //open slide by default
+    let slideIndex = 1;
+    openSlide(slideIndex);
+
+    controllerRight.addEventListener("click", () => {
+      slideIndex++;
+      //update the slideIndex
+      slideIndex = openSlide(slideIndex);
+    });
+    controllerLeft.addEventListener("click", () => {
+      slideIndex--;
+      slideIndex = openSlide(slideIndex);
+    });
+
+    firstDot.addEventListener("click", () => {
+      slideIndex = openSlide(1);
+    });
+
+    secondDot.addEventListener("click", () => {
+      slideIndex = openSlide(2);
+    });
+
+    thirdDot.addEventListener("click", () => {
+      slideIndex = openSlide(3);
+    });
+
+    fourthDot.addEventListener("click", () => {
+      slideIndex = openSlide(4);
+    });
+  </script>
+</html>

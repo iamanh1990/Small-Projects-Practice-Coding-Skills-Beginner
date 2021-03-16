@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Sidenav full width</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <div class="close">X</div>
+        <ul class="navbar__nav">
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">About</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="content">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="overlay"></div>
+        <h1>Main content</h1>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.querySelector(".hamburger").addEventListener("click", function () {
+      document.querySelector(".navbar").classList.toggle("show");
+      document.querySelector(".content").classList.toggle("show");
+      this.classList.toggle("click");
+    });
+
+    document.querySelector(".close").addEventListener("click", () => {
+      document.querySelector(".navbar").classList.remove("show");
+      document.querySelector(".content").classList.remove("show");
+      document.querySelector(".hamburger").classList.remove("click");
+    });
+  </script>
+</html>
